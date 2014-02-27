@@ -7,10 +7,21 @@
 //
 
 #import "SingleFileController.h"
+#import "AFHTTPRequestOperationManager.h"
+
+
 
 @interface SingleFileController () <UITableViewDataSource, UITableViewDelegate>
 
+@property (strong, nonatomic) NSArray *beers;
+
+@property (strong, nonatomic) UITableView *table;
+
+@property (strong, nonatomic) id JSON;
+
 @end
+
+
 
 @implementation SingleFileController
 
@@ -26,18 +37,24 @@
     welcomeLabel.numberOfLines = 2;
     [self.view addSubview:welcomeLabel];
 
-    UITableView *table = [[UITableView alloc] initWithFrame:CGRectMake(15, 170, 285, 240) style:UITableViewStylePlain];
-//    table.layer.borderColor = [UIColor blueColor].CGColor;
-//    table.layer.borderWidth = 1.0;
-    table.dataSource = self;
-    table.delegate = self;
-    [self.view addSubview:table];
+    self.table = [[UITableView alloc] initWithFrame:CGRectMake(15, 170, 285, 240) style:UITableViewStylePlain];
+    self.table.dataSource = self;
+    self.table.delegate = self;
+    [self.view addSubview:self.table];
+
+    [self fetchDeals];
+}
+
+#pragma mark - UITableViewDelegate Methods
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 120.0f;
 }
 
 #pragma mark - UITableViewDataSource Delegate Methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return self.beers.count;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -49,45 +66,47 @@
 
     if(cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Title"];
+    }
 
-        if (indexPath.row == 0) {
-            UILabel *beerName = [[UILabel alloc] initWithFrame:CGRectMake(50, 10, 200, 20)];
-            beerName.text = @"Double Dead Guy";
-            [cell.contentView addSubview:beerName];
+    if (self.beers != nil) {
+        UILabel *beerName = [[UILabel alloc] initWithFrame:CGRectMake(50, 10, 200, 20)];
+        beerName.text = [self.beers[1] objectForKey:@"name"];
+        [cell.contentView addSubview:beerName];
 
-            UILabel *price = [[UILabel alloc] initWithFrame:CGRectMake(200, 70, 100, 50)];
-            price.text = @"$21.99";
-            price.font = [UIFont systemFontOfSize:28];
-            price.textColor = [UIColor colorWithRed:(22.0/255.0) green:(111.0/255.0) blue:(66.0/255.0) alpha:1];
-            [cell.contentView addSubview:price];
+        UILabel *price = [[UILabel alloc] initWithFrame:CGRectMake(200, 70, 100, 50)];
+        price.text = [self.beers[indexPath.row] objectForKey:@"discountPrice"];
+        price.font = [UIFont systemFontOfSize:28];
+        price.textColor = [UIColor colorWithRed:(22.0/255.0) green:(111.0/255.0) blue:(66.0/255.0) alpha:1];
+        [cell.contentView addSubview:price];
 
-            UIImageView *pic = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Double-Dead-Guy.png"]];
-            pic.frame = CGRectMake(10, 10, 32, 100);
-            [cell.contentView addSubview:pic];
-        } else if (indexPath.row == 1) {
-            UILabel *beerName = [[UILabel alloc] initWithFrame:CGRectMake(50, 10, 200, 20)];
-            beerName.text = @"Chocolate Stout";
-            [cell.contentView addSubview:beerName];
-
-            UILabel *price = [[UILabel alloc] initWithFrame:CGRectMake(200, 70, 100, 50)];
-            price.text = @"$18.99";
-            price.font = [UIFont systemFontOfSize:28];
-            price.textColor = [UIColor colorWithRed:(22.0/255.0) green:(111.0/255.0) blue:(66.0/255.0) alpha:1];
-            [cell.contentView addSubview:price];
-
-            UIImageView *pic = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Chocolate-Stout.png"]];
-            pic.frame = CGRectMake(10, 10, 32, 100);
-            [cell.contentView addSubview:pic];
-        }
+        UIImageView *pic = [[UIImageView alloc] init];
+        pic.frame = CGRectMake(10, 10, 32, 100);
+        NSData* imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", @"http://localhost:9000", [self.beers[indexPath.row] objectForKey:@"image"]]]];
+        UIImage* image = [[UIImage alloc] initWithData:imageData];
+        [pic setImage:image];
+        [cell.contentView addSubview:pic];
     }
 
     return cell;
 }
 
-#pragma mark - UITableViewDelegate Methods
+#pragma API Calls
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 120.0f;
+- (void)fetchDeals {
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:@"http://api.localhost:9000/beers" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+        self.JSON = responseObject;
+        [self handleResponse];
+
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+}
+
+- (void)handleResponse {
+    self.beers = self.JSON;
+    [self.table reloadData];
 }
 
 @end
