@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  SingleFileController.h
 //  MVC
 //
 //  Created by Shaheen Ghiassy on 2/27/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
+@interface SingleFileController : UIViewController
 
 @end
