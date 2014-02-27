@@ -17,9 +17,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    UIImageView *logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"rogue-logo1.jpg"]];
-    logo.frame = CGRectMake(15, 40, 150, 50);
+    UIImageView *logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Rogue-Logo.png"]];
+    logo.frame = CGRectMake(15, 40, 150, 55);
     [self.view addSubview:logo];
+
+    UILabel *welcomeLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 90, 300, 50)];
+    welcomeLabel.text = @"Welcome to the Rogue Brewary app. Drink beer, be merry";
+    welcomeLabel.numberOfLines = 2;
+    [self.view addSubview:welcomeLabel];
 }
 
 @end
