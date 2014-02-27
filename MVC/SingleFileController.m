@@ -21,6 +21,7 @@
 
 @end
 
+static NSString *kHostAPI = @"http://localhost:9000";
 
 
 @implementation SingleFileController
@@ -70,18 +71,23 @@
 
     if (self.beers != nil) {
         UILabel *beerName = [[UILabel alloc] initWithFrame:CGRectMake(50, 10, 200, 20)];
-        beerName.text = [self.beers[1] objectForKey:@"name"];
+        beerName.text = [self.beers[indexPath.row] objectForKey:@"name"];
         [cell.contentView addSubview:beerName];
 
         UILabel *price = [[UILabel alloc] initWithFrame:CGRectMake(200, 70, 100, 50)];
-        price.text = [self.beers[indexPath.row] objectForKey:@"discountPrice"];
+
+        if ([[self.beers[indexPath.row] objectForKey:@"discountPriceActive"] integerValue] == 0) {
+            price.text = [self.beers[indexPath.row] objectForKey:@"consumerPrice"];
+        } else {
+            price.text = [self.beers[indexPath.row] objectForKey:@"discountPrice"];
+        }
         price.font = [UIFont systemFontOfSize:28];
         price.textColor = [UIColor colorWithRed:(22.0/255.0) green:(111.0/255.0) blue:(66.0/255.0) alpha:1];
         [cell.contentView addSubview:price];
 
         UIImageView *pic = [[UIImageView alloc] init];
         pic.frame = CGRectMake(10, 10, 32, 100);
-        NSData* imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", @"http://localhost:9000", [self.beers[indexPath.row] objectForKey:@"image"]]]];
+        NSData* imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", kHostAPI, [self.beers[indexPath.row] objectForKey:@"image"]]]];
         UIImage* image = [[UIImage alloc] initWithData:imageData];
         [pic setImage:image];
         [cell.contentView addSubview:pic];
