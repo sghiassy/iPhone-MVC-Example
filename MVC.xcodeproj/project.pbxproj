@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AA0E57A518BF6B7900AC48D4 /* Rogue-Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0E57A418BF6B7900AC48D4 /* Rogue-Logo.png */; };
+		AA0E57A818BF6C0D00AC48D4 /* Chocolate-Stout.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0E57A618BF6C0D00AC48D4 /* Chocolate-Stout.png */; };
+		AA0E57A918BF6C0D00AC48D4 /* Double-Dead-Guy.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0E57A718BF6C0D00AC48D4 /* Double-Dead-Guy.png */; };
 		AA33CF5718BF647000D7451D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA33CF5618BF647000D7451D /* Foundation.framework */; };
 		AA33CF5918BF647000D7451D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA33CF5818BF647000D7451D /* CoreGraphics.framework */; };
 		AA33CF5B18BF647000D7451D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA33CF5A18BF647000D7451D /* UIKit.framework */; };
@@ -37,6 +39,8 @@
 
 /* Begin PBXFileReference section */
 		AA0E57A418BF6B7900AC48D4 /* Rogue-Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rogue-Logo.png"; sourceTree = "<group>"; };
+		AA0E57A618BF6C0D00AC48D4 /* Chocolate-Stout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Chocolate-Stout.png"; sourceTree = "<group>"; };
+		AA0E57A718BF6C0D00AC48D4 /* Double-Dead-Guy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Double-Dead-Guy.png"; sourceTree = "<group>"; };
 		AA33CF5318BF647000D7451D /* MVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA33CF5618BF647000D7451D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AA33CF5818BF647000D7451D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -122,6 +126,8 @@
 				AA33CF8F18BF649D00D7451D /* MVC Example */,
 				AA33CF7118BF647000D7451D /* Images.xcassets */,
 				AA0E57A418BF6B7900AC48D4 /* Rogue-Logo.png */,
+				AA0E57A618BF6C0D00AC48D4 /* Chocolate-Stout.png */,
+				AA0E57A718BF6C0D00AC48D4 /* Double-Dead-Guy.png */,
 				AA33CF5D18BF647000D7451D /* Supporting Files */,
 			);
 			path = MVC;
@@ -260,7 +266,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA0E57A818BF6C0D00AC48D4 /* Chocolate-Stout.png in Resources */,
 				AA33CF7218BF647000D7451D /* Images.xcassets in Resources */,
+				AA0E57A918BF6C0D00AC48D4 /* Double-Dead-Guy.png in Resources */,
 				AA0E57A518BF6B7900AC48D4 /* Rogue-Logo.png in Resources */,
 				AA33CF6118BF647000D7451D /* InfoPlist.strings in Resources */,
 				AA33CF6A18BF647000D7451D /* Main.storyboard in Resources */,
