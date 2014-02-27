@@ -130,7 +130,6 @@
 				AA33CF9018BF651500D7451D /* App */,
 				AA33CF8E18BF649200D7451D /* Single File Example */,
 				AA33CF8F18BF649D00D7451D /* MVC Example */,
-				AA33CF5D18BF647000D7451D /* Supporting Files */,
 			);
 			path = MVC;
 			sourceTree = "<group>";
@@ -188,6 +187,7 @@
 				AA33CF6518BF647000D7451D /* AppDelegate.h */,
 				AA33CF6618BF647000D7451D /* AppDelegate.m */,
 				AA33CF6818BF647000D7451D /* Main.storyboard */,
+				AA33CF5D18BF647000D7451D /* Supporting Files */,
 				AA61DFA818BF706300926654 /* Assets */,
 			);
 			name = App;
