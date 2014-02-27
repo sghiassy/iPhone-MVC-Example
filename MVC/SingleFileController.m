@@ -13,9 +13,9 @@
 
 @interface SingleFileController () <UITableViewDataSource, UITableViewDelegate>
 
-@property (strong, nonatomic) NSArray *beers;
 @property (strong, nonatomic) UITableView *table;
-@property (strong, nonatomic) id JSON;
+@property (strong, nonatomic) id beerJSON;
+@property (strong, nonatomic) id priceJSON;
 
 @end
 
@@ -54,7 +54,7 @@ static NSString *kHost = @"http://shaheenghiassy.com";
 #pragma mark - UITableViewDataSource Delegate Methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.beers.count;
+    return 2;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -68,17 +68,17 @@ static NSString *kHost = @"http://shaheenghiassy.com";
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Title"];
     }
 
-    if (self.beers != nil) {
+    if (self.beerJSON != nil && self.priceJSON != nil) {
         UILabel *beerName = [[UILabel alloc] initWithFrame:CGRectMake(50, 10, 200, 20)];
-        beerName.text = [self.beers[indexPath.row] objectForKey:@"name"];
+        beerName.text = [self.beerJSON[indexPath.row] objectForKey:@"name"];
         [cell.contentView addSubview:beerName];
 
         UILabel *price = [[UILabel alloc] initWithFrame:CGRectMake(200, 70, 100, 50)];
 
-        if ([[self.beers[indexPath.row] objectForKey:@"discountPriceActive"] integerValue] == 0) {
-            price.text = [self.beers[indexPath.row] objectForKey:@"consumerPrice"];
+        if ([[self.priceJSON[indexPath.row] objectForKey:@"discountPriceActive"] integerValue] == 0) {
+            price.text = [self.priceJSON[indexPath.row] objectForKey:@"consumerPrice"];
         } else {
-            price.text = [self.beers[indexPath.row] objectForKey:@"discountPrice"];
+            price.text = [self.priceJSON[indexPath.row] objectForKey:@"discountPrice"];
         }
         price.font = [UIFont systemFontOfSize:28];
         price.textColor = [UIColor colorWithRed:(22.0/255.0) green:(111.0/255.0) blue:(66.0/255.0) alpha:1];
@@ -86,8 +86,10 @@ static NSString *kHost = @"http://shaheenghiassy.com";
 
         UIImageView *pic = [[UIImageView alloc] init];
         pic.frame = CGRectMake(10, 10, 32, 100);
-        NSData *imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", kHost, [self.beers[indexPath.row] objectForKey:@"image"]]]];
-        UIImage *image = [[UIImage alloc] initWithData:imageData];
+
+        NSData* imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", kHost, [self.beerJSON[indexPath.row] objectForKey:@"image"]]]];
+        UIImage* image = [[UIImage alloc] initWithData:imageData];
+
         [pic setImage:image];
         [cell.contentView addSubview:pic];
     }
@@ -99,19 +101,24 @@ static NSString *kHost = @"http://shaheenghiassy.com";
 
 - (void)fetchDeals {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+
     [manager GET:[NSString stringWithFormat:@"%@%@", kHostAPI, @"/beers"] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
-        self.JSON = responseObject;
-        [self handleResponse];
+        self.beerJSON = responseObject;
+        [self.table reloadData];
 
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
-}
 
-- (void)handleResponse {
-    self.beers = self.JSON;
-    [self.table reloadData];
+    [manager GET:[NSString stringWithFormat:@"%@%@", kHostAPI, @"/beers/price"] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+        self.priceJSON = responseObject;
+        [self.table reloadData];
+
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
 }
 
 @end
