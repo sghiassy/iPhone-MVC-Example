@@ -10,7 +10,6 @@
 #import "AFHTTPRequestOperationManager.h"
 
 
-
 @interface SingleFileController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) UITableView *table;
@@ -18,6 +17,7 @@
 @property (strong, nonatomic) id priceJSON;
 
 @end
+
 
 static NSString *kHostAPI = @"http://api.shaheenghiassy.com";
 static NSString *kHost = @"http://shaheenghiassy.com";
