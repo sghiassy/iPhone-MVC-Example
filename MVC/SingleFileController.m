@@ -14,14 +14,13 @@
 @interface SingleFileController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) NSArray *beers;
-
 @property (strong, nonatomic) UITableView *table;
-
 @property (strong, nonatomic) id JSON;
 
 @end
 
-static NSString *kHostAPI = @"http://localhost:9000";
+static NSString *kHostAPI = @"http://api.shaheenghiassy.com";
+static NSString *kHost = @"http://shaheenghiassy.com";
 
 
 @implementation SingleFileController
@@ -87,8 +86,8 @@ static NSString *kHostAPI = @"http://localhost:9000";
 
         UIImageView *pic = [[UIImageView alloc] init];
         pic.frame = CGRectMake(10, 10, 32, 100);
-        NSData* imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", kHostAPI, [self.beers[indexPath.row] objectForKey:@"image"]]]];
-        UIImage* image = [[UIImage alloc] initWithData:imageData];
+        NSData *imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", kHost, [self.beers[indexPath.row] objectForKey:@"image"]]]];
+        UIImage *image = [[UIImage alloc] initWithData:imageData];
         [pic setImage:image];
         [cell.contentView addSubview:pic];
     }
@@ -100,7 +99,7 @@ static NSString *kHostAPI = @"http://localhost:9000";
 
 - (void)fetchDeals {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:@"http://api.localhost:9000/beers" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:[NSString stringWithFormat:@"%@%@", kHostAPI, @"/beers"] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
         self.JSON = responseObject;
         [self handleResponse];
