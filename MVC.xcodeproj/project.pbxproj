@@ -10,6 +10,7 @@
 		0C2BF9CB4FA94D10912A05CD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4B043F27B7246909AB5F8BA /* libPods.a */; };
 		7A62838B18C4DDE6009A17AC /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A62838A18C4DDE6009A17AC /* HeaderView.m */; };
 		7A62838F18C4DE93009A17AC /* BeerList.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A62838E18C4DE93009A17AC /* BeerList.m */; };
+		7A62839218C4E33C009A17AC /* DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A62839118C4E33C009A17AC /* DataSource.m */; };
 		AA0E57A518BF6B7900AC48D4 /* Rogue-Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0E57A418BF6B7900AC48D4 /* Rogue-Logo.png */; };
 		AA0E57A818BF6C0D00AC48D4 /* Chocolate-Stout.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0E57A618BF6C0D00AC48D4 /* Chocolate-Stout.png */; };
 		AA0E57A918BF6C0D00AC48D4 /* Double-Dead-Guy.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0E57A718BF6C0D00AC48D4 /* Double-Dead-Guy.png */; };
@@ -45,6 +46,8 @@
 		7A62838A18C4DDE6009A17AC /* HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HeaderView.m; path = Classes/HeaderView.m; sourceTree = "<group>"; };
 		7A62838D18C4DE93009A17AC /* BeerList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BeerList.h; path = Classes/BeerList.h; sourceTree = "<group>"; };
 		7A62838E18C4DE93009A17AC /* BeerList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BeerList.m; path = Classes/BeerList.m; sourceTree = "<group>"; };
+		7A62839018C4E33C009A17AC /* DataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataSource.h; path = Classes/DataSource.h; sourceTree = "<group>"; };
+		7A62839118C4E33C009A17AC /* DataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataSource.m; path = Classes/DataSource.m; sourceTree = "<group>"; };
 		AA0E57A418BF6B7900AC48D4 /* Rogue-Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rogue-Logo.png"; sourceTree = "<group>"; };
 		AA0E57A618BF6C0D00AC48D4 /* Chocolate-Stout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Chocolate-Stout.png"; sourceTree = "<group>"; };
 		AA0E57A718BF6C0D00AC48D4 /* Double-Dead-Guy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Double-Dead-Guy.png"; sourceTree = "<group>"; };
@@ -107,6 +110,15 @@
 				7A62838E18C4DE93009A17AC /* BeerList.m */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		7A62839318C4E34F009A17AC /* Data Source */ = {
+			isa = PBXGroup;
+			children = (
+				7A62839018C4E33C009A17AC /* DataSource.h */,
+				7A62839118C4E33C009A17AC /* DataSource.m */,
+			);
+			name = "Data Source";
 			sourceTree = "<group>";
 		};
 		AA33CF4A18BF647000D7451D = {
@@ -194,6 +206,7 @@
 			children = (
 				AA33CF6E18BF647000D7451D /* Controller.h */,
 				AA33CF6F18BF647000D7451D /* Controller.m */,
+				7A62839318C4E34F009A17AC /* Data Source */,
 				7A62838C18C4DDF1009A17AC /* View */,
 			);
 			name = "MVC Example";
@@ -361,6 +374,7 @@
 				7A62838F18C4DE93009A17AC /* BeerList.m in Sources */,
 				7A62838B18C4DDE6009A17AC /* HeaderView.m in Sources */,
 				AA33CF6718BF647000D7451D /* AppDelegate.m in Sources */,
+				7A62839218C4E33C009A17AC /* DataSource.m in Sources */,
 				AA33CF6D18BF647000D7451D /* SingleFileController.m in Sources */,
 				AA33CF6318BF647000D7451D /* main.m in Sources */,
 			);

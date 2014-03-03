@@ -10,4 +10,7 @@
 
 @interface Controller : UIViewController
 
+- (void)beersReceieved:(id)beers;
+- (void)pricesReceived:(id)price;
+
 @end
