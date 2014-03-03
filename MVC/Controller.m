@@ -1,18 +1,19 @@
 //
-//  SecondViewController.m
+//  Controller.m
 //  MVC
 //
 //  Created by Shaheen Ghiassy on 2/27/14.
 //  Copyright (c) 2014 Shaheen Ghiassy. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "Controller.h"
 #import "AFHTTPRequestOperationManager.h"
 
 static NSString *kHostAPI = @"http://api.shaheenghiassy.com";
 static NSString *kHost = @"http://shaheenghiassy.com";
 
-@interface SecondViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@interface Controller () <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) UITableView *table;
 @property (strong, nonatomic) id beerJSON;
@@ -20,7 +21,8 @@ static NSString *kHost = @"http://shaheenghiassy.com";
 
 @end
 
-@implementation SecondViewController
+
+@implementation Controller
 
 - (void)viewDidLoad {
     [super viewDidLoad];

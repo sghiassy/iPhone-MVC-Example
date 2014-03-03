@@ -19,7 +19,7 @@
 		AA33CF6718BF647000D7451D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA33CF6618BF647000D7451D /* AppDelegate.m */; };
 		AA33CF6A18BF647000D7451D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA33CF6818BF647000D7451D /* Main.storyboard */; };
 		AA33CF6D18BF647000D7451D /* SingleFileController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA33CF6C18BF647000D7451D /* SingleFileController.m */; };
-		AA33CF7018BF647000D7451D /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA33CF6F18BF647000D7451D /* SecondViewController.m */; };
+		AA33CF7018BF647000D7451D /* Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = AA33CF6F18BF647000D7451D /* Controller.m */; };
 		AA33CF7218BF647000D7451D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA33CF7118BF647000D7451D /* Images.xcassets */; };
 		AA33CF7918BF647000D7451D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA33CF7818BF647000D7451D /* XCTest.framework */; };
 		AA33CF7A18BF647000D7451D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA33CF5618BF647000D7451D /* Foundation.framework */; };
@@ -55,8 +55,8 @@
 		AA33CF6918BF647000D7451D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AA33CF6B18BF647000D7451D /* SingleFileController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingleFileController.h; sourceTree = "<group>"; };
 		AA33CF6C18BF647000D7451D /* SingleFileController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleFileController.m; sourceTree = "<group>"; };
-		AA33CF6E18BF647000D7451D /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		AA33CF6F18BF647000D7451D /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		AA33CF6E18BF647000D7451D /* Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
+		AA33CF6F18BF647000D7451D /* Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Controller.m; sourceTree = "<group>"; };
 		AA33CF7118BF647000D7451D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AA33CF7718BF647000D7451D /* MVCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA33CF7818BF647000D7451D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -175,8 +175,8 @@
 		AA33CF8F18BF649D00D7451D /* MVC Example */ = {
 			isa = PBXGroup;
 			children = (
-				AA33CF6E18BF647000D7451D /* SecondViewController.h */,
-				AA33CF6F18BF647000D7451D /* SecondViewController.m */,
+				AA33CF6E18BF647000D7451D /* Controller.h */,
+				AA33CF6F18BF647000D7451D /* Controller.m */,
 			);
 			name = "MVC Example";
 			sourceTree = "<group>";
@@ -339,7 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA33CF7018BF647000D7451D /* SecondViewController.m in Sources */,
+				AA33CF7018BF647000D7451D /* Controller.m in Sources */,
 				AA33CF6718BF647000D7451D /* AppDelegate.m in Sources */,
 				AA33CF6D18BF647000D7451D /* SingleFileController.m in Sources */,
 				AA33CF6318BF647000D7451D /* main.m in Sources */,
