@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 Shaheen Ghiassy. All rights reserved.
 //
 
-#import "SingleFileController.h"
+#import "BeforeExample.h"
 #import "AFHTTPRequestOperationManager.h"
 
 
-@interface SingleFileController () <UITableViewDataSource, UITableViewDelegate>
+@interface BeforeExample () <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) UITableView *table;
 @property (strong, nonatomic) id beerJSON;
@@ -23,7 +23,7 @@ static NSString *kHostAPI = @"http://api.shaheenghiassy.com";
 static NSString *kHost = @"http://shaheenghiassy.com";
 
 
-@implementation SingleFileController
+@implementation BeforeExample
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--Single File Controller - Single File-->
+        <!--Before Example - Single File-->
         <scene sceneID="W3I-pn-N6e">
             <objects>
-                <viewController title="Single File" id="CZ4-MO-1fc" customClass="SingleFileController" sceneMemberID="viewController">
+                <viewController title="Single File" id="CZ4-MO-1fc" customClass="BeforeExample" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vZn-wk-2vG"/>
                         <viewControllerLayoutGuide type="bottom" id="buN-f1-msV"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Single File Example" image="first" id="u1e-5L-l1D"/>
+                    <tabBarItem key="tabBarItem" title="Before Example" image="first" id="u1e-5L-l1D"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qh2-T1-AhA" sceneMemberID="firstResponder"/>
             </objects>
@@ -36,7 +36,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="MVC Example" image="second" id="Z7h-1E-pvt"/>
+                    <tabBarItem key="tabBarItem" title="After Example" image="second" id="Z7h-1E-pvt"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3qq-4t-Ow8" sceneMemberID="firstResponder"/>
             </objects>
