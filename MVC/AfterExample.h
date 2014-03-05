@@ -1,5 +1,5 @@
 //
-//  Controller.h
+//  AfterExample.h
 //  MVC
 //
 //  Created by Shaheen Ghiassy on 2/27/14.
@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Controller : UIViewController
-
-- (void)beersReceieved:(id)beers;
-- (void)pricesReceived:(id)price;
+@interface AfterExample : UIViewController
 
 @end

@@ -23,10 +23,10 @@
             </objects>
             <point key="canvasLocation" x="653" y="-138"/>
         </scene>
-        <!--Controller - MVC Example-->
+        <!--After Example - MVC Example-->
         <scene sceneID="ot8-2e-RuS">
             <objects>
-                <viewController title="MVC Example" id="QUy-BD-bpt" customClass="Controller" sceneMemberID="viewController">
+                <viewController title="MVC Example" id="QUy-BD-bpt" customClass="AfterExample" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="k8s-xt-vlx"/>
                         <viewControllerLayoutGuide type="bottom" id="gax-Iw-6dI"/>
