@@ -189,6 +189,7 @@
 			children = (
 				7AF546E018C9573D00050335 /* Model.h */,
 				7AF546E118C9573D00050335 /* Model.m */,
+				7A62839318C4E34F009A17AC /* Data Source */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -281,7 +282,6 @@
 				AA33CF6E18BF647000D7451D /* Controller.h */,
 				AA33CF6F18BF647000D7451D /* Controller.m */,
 				7AF546E318C9574100050335 /* Model */,
-				7A62839318C4E34F009A17AC /* Data Source */,
 				7A62838C18C4DDF1009A17AC /* View */,
 			);
 			name = "MVC Example";

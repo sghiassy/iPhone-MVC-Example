@@ -12,7 +12,7 @@
 @interface DataSource : NSObject
 
 - (id)initWithDelegate:(Controller *)delegate;
-- (void)fetchDeals;
+- (void)fetchBeers;
 - (void)allJSONReceived;
 
 @end

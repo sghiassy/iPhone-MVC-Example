@@ -39,7 +39,7 @@ static NSString *kHost = @"http://shaheenghiassy.com";
     return self;
 }
 
-- (void)fetchDeals {
+- (void)fetchBeers {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
 
     [manager GET:[NSString stringWithFormat:@"%@%@", kHostAPI, @"/beers"] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {

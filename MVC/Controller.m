@@ -34,7 +34,7 @@
     [self.view addSubview:self.beerList.tableView];
 
     DataSource *dataSource = [[DataSource alloc] initWithDelegate:self];
-    [dataSource fetchDeals];
+    [dataSource fetchBeers];
 }
 
 - (void)beersReceieved:(NSArray *)beers {

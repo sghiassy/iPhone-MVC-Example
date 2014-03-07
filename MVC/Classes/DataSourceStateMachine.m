@@ -11,7 +11,7 @@
 
 @interface DataSourceStateMachine ()
 
-@property (weak, nonatomic) DataSource *delegate;
+@property (weak, nonatomic) DataSource       *delegate;
 @property (strong, nonatomic) GPStateMachine *stateMachine;
 
 @end
@@ -25,24 +25,23 @@
         _delegate = delegate;
 
         NSMutableDictionary *stateMachineDictionary = [@{
-                                                         tkInitialState:@"Init",
-                                                         tkStates:@{
-                                                                 @"Init":@{
-                                                                         tkExitTransitions:@[@"ReceivedPrices", @"receivedPrices",
-                                                                                             @"ReceivedProductInfo", @"receivedProductInfo"]
-                                                                         },
-                                                                 @"ReceivedPrices":@{
-                                                                         tkExitTransitions:@[@"Ready", @"receivedProductInfo"]
-                                                                         },
-                                                                 @"ReceivedProductInfo":@{
-                                                                         tkExitTransitions:@[@"Ready", @"receivedPrices"]
-                                                                         },
-                                                                 @"Ready":@{
-                                                                         
-                                                                         }
-                                                                 }
-                                                         } mutableCopy];
-        
+                                                           tkInitialState:@"Init",
+                                                           tkStates:@{
+                                                               @"Init":@{
+                                                                   tkExitTransitions:@[@"ReceivedPrices", @"receivedPrices",
+                                                                                       @"ReceivedProductInfo", @"receivedProductInfo"]
+                                                               },
+                                                               @"ReceivedPrices":@{
+                                                                   tkExitTransitions:@[@"Ready", @"receivedProductInfo"]
+                                                               },
+                                                               @"ReceivedProductInfo":@{
+                                                                   tkExitTransitions:@[@"Ready", @"receivedPrices"]
+                                                               },
+                                                               @"Ready":@{
+                                                               }
+                                                           }
+                                                       } mutableCopy];
+
         _stateMachine = [[GPStateMachine alloc] initWithDictionary:stateMachineDictionary];
         [_stateMachine setTranslatesEnterExitEventsToSelectorsForTarget:self];
         [_stateMachine activate];

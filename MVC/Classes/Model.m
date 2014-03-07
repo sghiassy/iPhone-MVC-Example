@@ -11,48 +11,32 @@
 
 @interface Model ()
 
-@property (strong, nonatomic) NSString *ID;
-@property (strong, nonatomic) NSString *name;
-@property (strong, nonatomic) NSString *image;
-@property (strong, nonatomic) NSNumber *price;
-@property (strong, nonatomic) NSString *rating;
-@property (strong, nonatomic) NSString *type;
-@property (strong, nonatomic) NSNumber *consumerPrice;
-@property (strong, nonatomic) NSNumber *discountPrice;
-@property (strong, nonatomic) NSNumber *vendorPrice;
-@property (assign, nonatomic) BOOL discountPriceActive;
+/**
+ *  In real-world settings, you would want to convert each value to a proper typed variable
+ *  instead of just stuffing in the dictionary
+ */
+@property (strong, nonatomic) NSDictionary *priceDict;
+@property (strong, nonatomic) NSDictionary *productDict;
 @property (strong, nonatomic) NSString *host;
+@property (strong, nonatomic) NSString *price;
 
 @end
-
 
 @implementation Model
 
 #pragma mark - Setters
 
 - (void)setPriceInfo:(NSDictionary *)priceInfo {
-    for (id key in priceInfo) {
-        if ([key isEqualToString:@"consumerPrice"]) {
-            self.consumerPrice = [self convertToNSNumber:[priceInfo objectForKey:key]];
-        } else if ([key isEqualToString:@"discountPrice"]) {
-            self.discountPrice = [self convertToNSNumber:[priceInfo objectForKey:key]];
-        } else if ([key isEqualToString:@"discountPriceActive"]) {
-            self.discountPriceActive = [[priceInfo objectForKey:key] isEqualToString:@"1.0"];
-        } else if ([key isEqualToString:@"vendorPrice"]) {
-            self.vendorPrice = [self convertToNSNumber:[priceInfo objectForKey:key]];
-        }
-    }
+    self.priceDict = [priceInfo copy];
 
-    self.price = [self setBeerPrice:self.discountPriceActive discountPrice:self.discountPrice consumerPrice:self.consumerPrice];
+    BOOL isDiscountActive = [[self.priceDict objectForKey:@"discountPriceActive"] integerValue] == 1;
+    self.price = [self setBeerPrice:isDiscountActive
+                      discountPrice:[self.priceDict objectForKey:@"discountPrice"]
+                      consumerPrice:[self.priceDict objectForKey:@"consumerPrice"]];
 }
 
-- (NSNumber *)convertToNSNumber:(NSString *)string {
-    NSNumber *number = [[NSNumber alloc] initWithDouble:[string doubleValue]];
-    return number;
-}
-
-- (NSNumber *)setBeerPrice:(BOOL)discountIsActive discountPrice:(NSNumber *)discountPrice consumerPrice:(NSNumber *)consumerPrice {
-    NSNumber *price;
+- (NSString *)setBeerPrice:(BOOL)discountIsActive discountPrice:(NSString *)discountPrice consumerPrice:(NSString *)consumerPrice {
+    NSString *price;
 
     if (discountIsActive) {
         price = [discountPrice copy];
@@ -64,19 +48,7 @@
 }
 
 - (void)setProductInfo:(NSDictionary *)productInfo {
-    for (id key in productInfo) {
-        if ([key isEqualToString:@"id"]) {
-            self.ID = [productInfo objectForKey:key];
-        } else if ([key isEqualToString:@"image"]) {
-            self.image = [productInfo objectForKey:key];
-        } else if ([key isEqualToString:@"name"]) {
-            self.name = [productInfo objectForKey:key];
-        } else if ([key isEqualToString:@"rating"]) {
-            self.rating = [productInfo objectForKey:key];
-        } else if ([key isEqualToString:@"type"]) {
-            self.type = [productInfo objectForKey:key];
-        }
-    }
+    self.productDict = productInfo;
 }
 
 - (void)setHost:(NSString *)host {
@@ -86,7 +58,7 @@
 #pragma mark - Getters
 
 - (NSString *)getName {
-    return [self.name copy];
+    return [[self.priceDict objectForKey:@"name"] copy];
 }
 
 - (NSString *)getPrice {
@@ -94,7 +66,7 @@
 }
 
 - (NSString *)getImageUrl {
-    return [NSString stringWithFormat:@"%@%@", self.host, self.image];
+    return [NSString stringWithFormat:@"%@%@", self.host, [self.productDict objectForKey:@"image"]];
 }
 
 @end

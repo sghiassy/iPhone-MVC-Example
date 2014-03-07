@@ -12,6 +12,7 @@
 @interface BeerCard : UIView
 
 + (NSUInteger)height;
+
 - (id)initWithFrame:(CGRect)frame andModel:(Model *)model;
 
 @end

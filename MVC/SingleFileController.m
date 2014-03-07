@@ -54,7 +54,11 @@ static NSString *kHost = @"http://shaheenghiassy.com";
 #pragma mark - UITableViewDataSource Delegate Methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    if (self.beerJSON != nil && self.priceJSON != nil) {
+        return [self.beerJSON count];
+    } else {
+        return 0;
+    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -66,9 +70,7 @@ static NSString *kHost = @"http://shaheenghiassy.com";
 
     if(cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Title"];
-    }
 
-    if (self.beerJSON != nil && self.priceJSON != nil) {
         UILabel *beerName = [[UILabel alloc] initWithFrame:CGRectMake(50, 10, 200, 20)];
         beerName.text = [self.beerJSON[indexPath.row] objectForKey:@"name"];
         [cell.contentView addSubview:beerName];
@@ -88,8 +90,8 @@ static NSString *kHost = @"http://shaheenghiassy.com";
         UIImageView *pic = [[UIImageView alloc] init];
         pic.frame = CGRectMake(10, 10, 32, 100);
 
-        NSData* imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", kHost, [self.beerJSON[indexPath.row] objectForKey:@"image"]]]];
-        UIImage* image = [[UIImage alloc] initWithData:imageData];
+        NSData *imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", kHost, [self.beerJSON[indexPath.row] objectForKey:@"image"]]]];
+        UIImage *image = [[UIImage alloc] initWithData:imageData];
 
         [pic setImage:image];
         [cell.contentView addSubview:pic];
