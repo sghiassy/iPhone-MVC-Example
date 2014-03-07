@@ -19,7 +19,6 @@
 @end
 
 
-
 @implementation BeerList
 
 - (void)addBeers:(NSArray *)beers {
