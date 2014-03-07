@@ -9,6 +9,7 @@
 #import "BeerList.h"
 #import "Controller.h"
 #import "Model.h"
+#import "BeerCard.h"
 
 @interface BeerList ()
 
@@ -45,7 +46,7 @@
 #pragma mark - UITableViewDelegate Methods
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 120.0f;
+    return [BeerCard height];
 }
 
 #pragma mark - UITableViewDataSource Delegate Methods
@@ -63,28 +64,8 @@
 
     if(cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Title"];
-
-        NSUInteger row = indexPath.row;
-        Model *beer = [self.beers objectAtIndex:row];
-
-        UILabel *beerName = [[UILabel alloc] initWithFrame:CGRectMake(50, 10, 200, 20)];
-        beerName.text = [beer getName];
-        [cell.contentView addSubview:beerName];
-
-        UILabel *price = [[UILabel alloc] initWithFrame:CGRectMake(200, 70, 100, 50)];
-        price.text = [NSString stringWithFormat:@"$%@", [beer getPrice]];
-        price.font = [UIFont systemFontOfSize:28];
-        price.textColor = [UIColor colorWithRed:(22.0/255.0) green:(111.0/255.0) blue:(66.0/255.0) alpha:1];
-        [cell.contentView addSubview:price];
-
-        UIImageView *pic = [[UIImageView alloc] init];
-        pic.frame = CGRectMake(10, 10, 32, 100);
-
-        NSData *imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:[beer getImageUrl]]];
-        UIImage *image = [[UIImage alloc] initWithData:imageData];
-        
-        [pic setImage:image];
-        [cell.contentView addSubview:pic];
+        BeerCard *card = [[BeerCard alloc] initWithFrame:CGRectMake(0, 0, 320, 44) andModel:self.beers[indexPath.row]];
+        [cell.contentView addSubview:card];
     }
 
     return cell;
