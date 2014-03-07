@@ -11,6 +11,12 @@
 		7A62838B18C4DDE6009A17AC /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A62838A18C4DDE6009A17AC /* HeaderView.m */; };
 		7A62838F18C4DE93009A17AC /* BeerList.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A62838E18C4DE93009A17AC /* BeerList.m */; };
 		7A62839218C4E33C009A17AC /* DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A62839118C4E33C009A17AC /* DataSource.m */; };
+		7A9ACFCC18C94F57002345FF /* GPStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9ACFBE18C94F57002345FF /* GPStateMachine.m */; };
+		7A9ACFCE18C94F57002345FF /* TKEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9ACFC118C94F57002345FF /* TKEvent.m */; };
+		7A9ACFD018C94F57002345FF /* TKState.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9ACFC418C94F57002345FF /* TKState.m */; };
+		7A9ACFD118C94F57002345FF /* TKStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9ACFC618C94F57002345FF /* TKStateMachine.m */; };
+		7A9ACFD418C94F57002345FF /* TKTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9ACFCA18C94F57002345FF /* TKTransition.m */; };
+		7A9ACFD918C955CB002345FF /* NSDictionary+fetchPropertyValues.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9ACFD818C955CB002345FF /* NSDictionary+fetchPropertyValues.m */; };
 		AA0E57A518BF6B7900AC48D4 /* Rogue-Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0E57A418BF6B7900AC48D4 /* Rogue-Logo.png */; };
 		AA0E57A818BF6C0D00AC48D4 /* Chocolate-Stout.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0E57A618BF6C0D00AC48D4 /* Chocolate-Stout.png */; };
 		AA0E57A918BF6C0D00AC48D4 /* Double-Dead-Guy.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0E57A718BF6C0D00AC48D4 /* Double-Dead-Guy.png */; };
@@ -48,6 +54,20 @@
 		7A62838E18C4DE93009A17AC /* BeerList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BeerList.m; path = Classes/BeerList.m; sourceTree = "<group>"; };
 		7A62839018C4E33C009A17AC /* DataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataSource.h; path = Classes/DataSource.h; sourceTree = "<group>"; };
 		7A62839118C4E33C009A17AC /* DataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataSource.m; path = Classes/DataSource.m; sourceTree = "<group>"; };
+		7A9ACFBB18C94F57002345FF /* TKStateMachine+Subclasses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TKStateMachine+Subclasses.h"; sourceTree = "<group>"; };
+		7A9ACFBD18C94F57002345FF /* GPStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPStateMachine.h; sourceTree = "<group>"; };
+		7A9ACFBE18C94F57002345FF /* GPStateMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPStateMachine.m; sourceTree = "<group>"; };
+		7A9ACFC018C94F57002345FF /* TKEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKEvent.h; sourceTree = "<group>"; };
+		7A9ACFC118C94F57002345FF /* TKEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKEvent.m; sourceTree = "<group>"; };
+		7A9ACFC318C94F57002345FF /* TKState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKState.h; sourceTree = "<group>"; };
+		7A9ACFC418C94F57002345FF /* TKState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKState.m; sourceTree = "<group>"; };
+		7A9ACFC518C94F57002345FF /* TKStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKStateMachine.h; sourceTree = "<group>"; };
+		7A9ACFC618C94F57002345FF /* TKStateMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKStateMachine.m; sourceTree = "<group>"; };
+		7A9ACFC918C94F57002345FF /* TKTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTransition.h; sourceTree = "<group>"; };
+		7A9ACFCA18C94F57002345FF /* TKTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTransition.m; sourceTree = "<group>"; };
+		7A9ACFCB18C94F57002345FF /* TransitionKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitionKit.h; sourceTree = "<group>"; };
+		7A9ACFD718C955CB002345FF /* NSDictionary+fetchPropertyValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+fetchPropertyValues.h"; sourceTree = "<group>"; };
+		7A9ACFD818C955CB002345FF /* NSDictionary+fetchPropertyValues.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+fetchPropertyValues.m"; sourceTree = "<group>"; };
 		AA0E57A418BF6B7900AC48D4 /* Rogue-Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rogue-Logo.png"; sourceTree = "<group>"; };
 		AA0E57A618BF6C0D00AC48D4 /* Chocolate-Stout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Chocolate-Stout.png"; sourceTree = "<group>"; };
 		AA0E57A718BF6C0D00AC48D4 /* Double-Dead-Guy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Double-Dead-Guy.png"; sourceTree = "<group>"; };
@@ -121,6 +141,26 @@
 			name = "Data Source";
 			sourceTree = "<group>";
 		};
+		7A9ACFBC18C94F57002345FF /* TransitionKit */ = {
+			isa = PBXGroup;
+			children = (
+				7A9ACFBD18C94F57002345FF /* GPStateMachine.h */,
+				7A9ACFBE18C94F57002345FF /* GPStateMachine.m */,
+				7A9ACFC018C94F57002345FF /* TKEvent.h */,
+				7A9ACFC118C94F57002345FF /* TKEvent.m */,
+				7A9ACFC318C94F57002345FF /* TKState.h */,
+				7A9ACFC418C94F57002345FF /* TKState.m */,
+				7A9ACFC518C94F57002345FF /* TKStateMachine.h */,
+				7A9ACFC618C94F57002345FF /* TKStateMachine.m */,
+				7A9ACFC918C94F57002345FF /* TKTransition.h */,
+				7A9ACFCA18C94F57002345FF /* TKTransition.m */,
+				7A9ACFCB18C94F57002345FF /* TransitionKit.h */,
+				7A9ACFD718C955CB002345FF /* NSDictionary+fetchPropertyValues.h */,
+				7A9ACFD818C955CB002345FF /* NSDictionary+fetchPropertyValues.m */,
+			);
+			path = TransitionKit;
+			sourceTree = "<group>";
+		};
 		AA33CF4A18BF647000D7451D = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +196,8 @@
 		AA33CF5C18BF647000D7451D /* MVC */ = {
 			isa = PBXGroup;
 			children = (
+				7A9ACFBB18C94F57002345FF /* TKStateMachine+Subclasses.h */,
+				7A9ACFBC18C94F57002345FF /* TransitionKit */,
 				AA33CF9018BF651500D7451D /* App */,
 				AA33CF8E18BF649200D7451D /* Single File Example */,
 				AA33CF8F18BF649D00D7451D /* MVC Example */,
@@ -370,10 +412,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A9ACFCC18C94F57002345FF /* GPStateMachine.m in Sources */,
 				AA33CF7018BF647000D7451D /* Controller.m in Sources */,
+				7A9ACFD418C94F57002345FF /* TKTransition.m in Sources */,
+				7A9ACFD118C94F57002345FF /* TKStateMachine.m in Sources */,
 				7A62838F18C4DE93009A17AC /* BeerList.m in Sources */,
+				7A9ACFD018C94F57002345FF /* TKState.m in Sources */,
 				7A62838B18C4DDE6009A17AC /* HeaderView.m in Sources */,
 				AA33CF6718BF647000D7451D /* AppDelegate.m in Sources */,
+				7A9ACFCE18C94F57002345FF /* TKEvent.m in Sources */,
+				7A9ACFD918C955CB002345FF /* NSDictionary+fetchPropertyValues.m in Sources */,
 				7A62839218C4E33C009A17AC /* DataSource.m in Sources */,
 				AA33CF6D18BF647000D7451D /* SingleFileController.m in Sources */,
 				AA33CF6318BF647000D7451D /* main.m in Sources */,
