@@ -13,7 +13,7 @@
 #import "BeerList.h"
 #import "DataSource.h"
 
-
+#define CGMakeBeerTable CGRectMake(15, 170, 285, 240)
 
 @interface Controller ()
 
@@ -30,23 +30,15 @@
     HeaderView *header = [[HeaderView alloc] init];
     [self.view addSubview:header];
 
-    self.beerList = [[BeerList alloc] initWithDelegate:self andFrame:CGRectMake(15, 170, 285, 240)];
+    self.beerList = [[BeerList alloc] initWithDelegate:self andFrame:CGMakeBeerTable];
     [self.view addSubview:self.beerList.tableView];
 
     DataSource *dataSource = [[DataSource alloc] initWithDelegate:self];
     [dataSource fetchDeals];
 }
 
-
-
-#pragma API Calls
-
-- (void)beersReceieved:(id)beers {
-    self.beerList.beerJSON = beers;
+- (void)beersReceieved:(NSArray *)beers {
+    [self.beerList addBeers:beers];
 }
-- (void)pricesReceived:(id)price {
-    self.beerList.priceJSON = price;
-}
-
 
 @end

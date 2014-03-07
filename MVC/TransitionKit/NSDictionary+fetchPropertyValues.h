@@ -39,6 +39,4 @@
 - (id)objectForKeyNotNull:(id)key;
 - (id)valueForKeyNotNull:(id)key;
 
-- (Currency *)currencyForKey:(NSString *)key defaultValue:(Currency *)defaultValue;
-
 @end

@@ -80,6 +80,7 @@ static NSString *kHost = @"http://shaheenghiassy.com";
         } else {
             price.text = [self.priceJSON[indexPath.row] objectForKey:@"discountPrice"];
         }
+        price.text = [NSString stringWithFormat:@"$%@", price.text];
         price.font = [UIFont systemFontOfSize:28];
         price.textColor = [UIColor colorWithRed:(22.0/255.0) green:(111.0/255.0) blue:(66.0/255.0) alpha:1];
         [cell.contentView addSubview:price];

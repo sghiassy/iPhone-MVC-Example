@@ -13,5 +13,6 @@
 
 - (id)initWithDelegate:(Controller *)delegate;
 - (void)fetchDeals;
+- (void)allJSONReceived;
 
 @end

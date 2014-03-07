@@ -11,8 +11,6 @@
 @interface BeerList : UITableViewController
 
 - (id)initWithDelegate:(id)delegate andFrame:(CGRect)frame;
-
-@property (strong, nonatomic) id beerJSON;
-@property (strong, nonatomic) id priceJSON;
+- (void)addBeers:(NSArray *)beers;
 
 @end

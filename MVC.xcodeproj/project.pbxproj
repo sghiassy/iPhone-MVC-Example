@@ -17,6 +17,9 @@
 		7A9ACFD118C94F57002345FF /* TKStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9ACFC618C94F57002345FF /* TKStateMachine.m */; };
 		7A9ACFD418C94F57002345FF /* TKTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9ACFCA18C94F57002345FF /* TKTransition.m */; };
 		7A9ACFD918C955CB002345FF /* NSDictionary+fetchPropertyValues.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9ACFD818C955CB002345FF /* NSDictionary+fetchPropertyValues.m */; };
+		7AF546E218C9573D00050335 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF546E118C9573D00050335 /* Model.m */; };
+		7AF546E618C957D600050335 /* DataSourceStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF546E518C957D600050335 /* DataSourceStateMachine.m */; };
+		7AF546EB18C96C6000050335 /* BeerCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF546EA18C96C6000050335 /* BeerCard.m */; };
 		AA0E57A518BF6B7900AC48D4 /* Rogue-Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0E57A418BF6B7900AC48D4 /* Rogue-Logo.png */; };
 		AA0E57A818BF6C0D00AC48D4 /* Chocolate-Stout.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0E57A618BF6C0D00AC48D4 /* Chocolate-Stout.png */; };
 		AA0E57A918BF6C0D00AC48D4 /* Double-Dead-Guy.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0E57A718BF6C0D00AC48D4 /* Double-Dead-Guy.png */; };
@@ -68,6 +71,12 @@
 		7A9ACFCB18C94F57002345FF /* TransitionKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitionKit.h; sourceTree = "<group>"; };
 		7A9ACFD718C955CB002345FF /* NSDictionary+fetchPropertyValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+fetchPropertyValues.h"; sourceTree = "<group>"; };
 		7A9ACFD818C955CB002345FF /* NSDictionary+fetchPropertyValues.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+fetchPropertyValues.m"; sourceTree = "<group>"; };
+		7AF546E018C9573D00050335 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Model.h; path = Classes/Model.h; sourceTree = "<group>"; };
+		7AF546E118C9573D00050335 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Model.m; path = Classes/Model.m; sourceTree = "<group>"; };
+		7AF546E418C957D600050335 /* DataSourceStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataSourceStateMachine.h; path = Classes/DataSourceStateMachine.h; sourceTree = "<group>"; };
+		7AF546E518C957D600050335 /* DataSourceStateMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataSourceStateMachine.m; path = Classes/DataSourceStateMachine.m; sourceTree = "<group>"; };
+		7AF546E918C96C6000050335 /* BeerCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BeerCard.h; path = Classes/BeerCard.h; sourceTree = "<group>"; };
+		7AF546EA18C96C6000050335 /* BeerCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BeerCard.m; path = Classes/BeerCard.m; sourceTree = "<group>"; };
 		AA0E57A418BF6B7900AC48D4 /* Rogue-Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rogue-Logo.png"; sourceTree = "<group>"; };
 		AA0E57A618BF6C0D00AC48D4 /* Chocolate-Stout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Chocolate-Stout.png"; sourceTree = "<group>"; };
 		AA0E57A718BF6C0D00AC48D4 /* Double-Dead-Guy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Double-Dead-Guy.png"; sourceTree = "<group>"; };
@@ -128,6 +137,8 @@
 				7A62838A18C4DDE6009A17AC /* HeaderView.m */,
 				7A62838D18C4DE93009A17AC /* BeerList.h */,
 				7A62838E18C4DE93009A17AC /* BeerList.m */,
+				7AF546E918C96C6000050335 /* BeerCard.h */,
+				7AF546EA18C96C6000050335 /* BeerCard.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -137,6 +148,8 @@
 			children = (
 				7A62839018C4E33C009A17AC /* DataSource.h */,
 				7A62839118C4E33C009A17AC /* DataSource.m */,
+				7AF546E418C957D600050335 /* DataSourceStateMachine.h */,
+				7AF546E518C957D600050335 /* DataSourceStateMachine.m */,
 			);
 			name = "Data Source";
 			sourceTree = "<group>";
@@ -169,6 +182,15 @@
 				7A9ACFD818C955CB002345FF /* NSDictionary+fetchPropertyValues.m */,
 			);
 			path = TransitionKit;
+			sourceTree = "<group>";
+		};
+		7AF546E318C9574100050335 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7AF546E018C9573D00050335 /* Model.h */,
+				7AF546E118C9573D00050335 /* Model.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		AA33CF4A18BF647000D7451D = {
@@ -258,6 +280,7 @@
 			children = (
 				AA33CF6E18BF647000D7451D /* Controller.h */,
 				AA33CF6F18BF647000D7451D /* Controller.m */,
+				7AF546E318C9574100050335 /* Model */,
 				7A62839318C4E34F009A17AC /* Data Source */,
 				7A62838C18C4DDF1009A17AC /* View */,
 			);
@@ -425,6 +448,7 @@
 				7A9ACFCC18C94F57002345FF /* GPStateMachine.m in Sources */,
 				AA33CF7018BF647000D7451D /* Controller.m in Sources */,
 				7A9ACFD418C94F57002345FF /* TKTransition.m in Sources */,
+				7AF546E618C957D600050335 /* DataSourceStateMachine.m in Sources */,
 				7A9ACFD118C94F57002345FF /* TKStateMachine.m in Sources */,
 				7A62838F18C4DE93009A17AC /* BeerList.m in Sources */,
 				7A9ACFD018C94F57002345FF /* TKState.m in Sources */,
@@ -433,6 +457,8 @@
 				7A9ACFCE18C94F57002345FF /* TKEvent.m in Sources */,
 				7A9ACFD918C955CB002345FF /* NSDictionary+fetchPropertyValues.m in Sources */,
 				7A62839218C4E33C009A17AC /* DataSource.m in Sources */,
+				7AF546E218C9573D00050335 /* Model.m in Sources */,
+				7AF546EB18C96C6000050335 /* BeerCard.m in Sources */,
 				AA33CF6D18BF647000D7451D /* SingleFileController.m in Sources */,
 				AA33CF6318BF647000D7451D /* main.m in Sources */,
 			);
