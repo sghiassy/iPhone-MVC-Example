@@ -54,7 +54,7 @@
 		7A62838E18C4DE93009A17AC /* BeerList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BeerList.m; path = Classes/BeerList.m; sourceTree = "<group>"; };
 		7A62839018C4E33C009A17AC /* DataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataSource.h; path = Classes/DataSource.h; sourceTree = "<group>"; };
 		7A62839118C4E33C009A17AC /* DataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataSource.m; path = Classes/DataSource.m; sourceTree = "<group>"; };
-		7A9ACFBB18C94F57002345FF /* TKStateMachine+Subclasses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TKStateMachine+Subclasses.h"; sourceTree = "<group>"; };
+		7A9ACFBB18C94F57002345FF /* TKStateMachine+Subclasses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TKStateMachine+Subclasses.h"; path = "../TKStateMachine+Subclasses.h"; sourceTree = "<group>"; };
 		7A9ACFBD18C94F57002345FF /* GPStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPStateMachine.h; sourceTree = "<group>"; };
 		7A9ACFBE18C94F57002345FF /* GPStateMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPStateMachine.m; sourceTree = "<group>"; };
 		7A9ACFC018C94F57002345FF /* TKEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKEvent.h; sourceTree = "<group>"; };
@@ -141,11 +141,21 @@
 			name = "Data Source";
 			sourceTree = "<group>";
 		};
+		7A6F7DAD18C956AA008D570D /* Thirdparty */ = {
+			isa = PBXGroup;
+			children = (
+				7A9ACFBC18C94F57002345FF /* TransitionKit */,
+			);
+			name = Thirdparty;
+			path = MVC;
+			sourceTree = "<group>";
+		};
 		7A9ACFBC18C94F57002345FF /* TransitionKit */ = {
 			isa = PBXGroup;
 			children = (
 				7A9ACFBD18C94F57002345FF /* GPStateMachine.h */,
 				7A9ACFBE18C94F57002345FF /* GPStateMachine.m */,
+				7A9ACFBB18C94F57002345FF /* TKStateMachine+Subclasses.h */,
 				7A9ACFC018C94F57002345FF /* TKEvent.h */,
 				7A9ACFC118C94F57002345FF /* TKEvent.m */,
 				7A9ACFC318C94F57002345FF /* TKState.h */,
@@ -164,7 +174,8 @@
 		AA33CF4A18BF647000D7451D = {
 			isa = PBXGroup;
 			children = (
-				AA33CF5C18BF647000D7451D /* MVC */,
+				AA33CF5C18BF647000D7451D /* App */,
+				7A6F7DAD18C956AA008D570D /* Thirdparty */,
 				AA33CF7E18BF647000D7451D /* MVCTests */,
 				AA33CF5518BF647000D7451D /* Frameworks */,
 				AA33CF5418BF647000D7451D /* Products */,
@@ -193,15 +204,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		AA33CF5C18BF647000D7451D /* MVC */ = {
+		AA33CF5C18BF647000D7451D /* App */ = {
 			isa = PBXGroup;
 			children = (
-				7A9ACFBB18C94F57002345FF /* TKStateMachine+Subclasses.h */,
-				7A9ACFBC18C94F57002345FF /* TransitionKit */,
 				AA33CF9018BF651500D7451D /* App */,
 				AA33CF8E18BF649200D7451D /* Single File Example */,
 				AA33CF8F18BF649D00D7451D /* MVC Example */,
 			);
+			name = App;
 			path = MVC;
 			sourceTree = "<group>";
 		};
